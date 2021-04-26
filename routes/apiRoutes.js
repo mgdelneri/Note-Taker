@@ -1,9 +1,14 @@
 const fs = require('fs');
+const uniqid = require('uniqid');
+
+console.log(uniqid());
+
+// const { v4: uuidv4 } = require('uuid');
+// const newID = uuidv4();
 
 // ROUTING
 module.exports = (app) => {
   // API GET Request
-
   app.get('/api/notes', (req, res) => {
     fs.readFile(__dirname + '/../db/db.json', 'utf8', (error, data) => {
     error ? console.error(error) : console.log(data);
@@ -14,7 +19,19 @@ module.exports = (app) => {
   
   // API POST Requests
   app.post('/api/notes', (req, res) => {
-    res.send("POST Request Called")
-    //?????
+    const newNote = req.body;
+    console.log(newNote);
+
+    fs.writeFile(__dirname + '/../db/db.json', JSON.stringify(newNote), function (err) {
+      if (err) throw err;
+      console.log('Saved!');
+    })
+
+    /*fs.writeFile(__dirname + '/../public/notes.html', __dirname + '/../db/db.json', function(err) {
+      if (err) throw err;
+      console.log('Done!');
+    })*/
+
+    res.send(newNote);
   })
 }
