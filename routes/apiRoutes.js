@@ -20,6 +20,7 @@ module.exports = (app) => {
   // API POST Requests
   app.post('/api/notes', (req, res) => {
     const newNote = req.body;
+    newNote.id = uniqid();
     console.log(newNote);
 
     fs.readFile(__dirname + '/../db/db.json', 'utf8', (error, data) => {
