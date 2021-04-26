@@ -1,11 +1,6 @@
 const fs = require('fs');
 const uniqid = require('uniqid');
 
-console.log(uniqid());
-
-// const { v4: uuidv4 } = require('uuid');
-// const newID = uuidv4();
-
 // ROUTING
 module.exports = (app) => {
   // API GET Request
@@ -19,6 +14,7 @@ module.exports = (app) => {
   
   // API POST Requests
   app.post('/api/notes', (req, res) => {
+    // New note saved on the request body
     const newNote = req.body;
     newNote.id = uniqid();
     console.log(newNote);
@@ -31,6 +27,24 @@ module.exports = (app) => {
         if (err) throw err;
         console.log('Saved!');
         res.send(dataJson);
+      });
+    })
+  })
+
+  app.delete('/api/notes/:id', (req, res) => {
+    const chosen = req.params.id;
+
+    fs.readFile(__dirname + '/../db/db.json', 'utf8', (error, data) => {
+      error ? console.error(error) : console.log(data);
+      let dataJson = JSON.parse(data);
+      
+      var newData = dataJson.filter(x => {
+        return x.id != chosen;
+      })
+      fs.writeFile(__dirname + '/../db/db.json', JSON.stringify(newData), function (err) {
+        if (err) throw err;
+        console.log('Updated!');
+        res.send(newData);
       });
     })
   })
