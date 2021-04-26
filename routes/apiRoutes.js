@@ -22,16 +22,15 @@ module.exports = (app) => {
     const newNote = req.body;
     console.log(newNote);
 
-    fs.writeFile(__dirname + '/../db/db.json', JSON.stringify(newNote), function (err) {
-      if (err) throw err;
-      console.log('Saved!');
+    fs.readFile(__dirname + '/../db/db.json', 'utf8', (error, data) => {
+      error ? console.error(error) : console.log(data);
+      let dataJson = JSON.parse(data);
+      dataJson.push(newNote);
+      fs.writeFile(__dirname + '/../db/db.json', JSON.stringify(dataJson), function (err) {
+        if (err) throw err;
+        console.log('Saved!');
+        res.send(dataJson);
+      });
     })
-
-    /*fs.writeFile(__dirname + '/../public/notes.html', __dirname + '/../db/db.json', function(err) {
-      if (err) throw err;
-      console.log('Done!');
-    })*/
-
-    res.send(newNote);
   })
 }
