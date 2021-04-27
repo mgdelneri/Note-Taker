@@ -20,7 +20,7 @@ The final steps of this project involved testing the application several times f
 
 Here is a walkthrough video of Note-Taker's functionality:
 
-[Note-Taker Walkthrough Video]()
+[Note-Taker Walkthrough Video](https://drive.google.com/file/d/1BjB2lUK7doLCcb4UuRg_dAqDdMFbXUPH/view)
 
 ## CONCLUSION
 
