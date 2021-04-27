@@ -14,7 +14,7 @@ At this point, I started looking at the starter code and trying to make sense of
 
 The next step was a long stretch of pseudo-coding and writing out lists of possible strategies to attack the back-end of this project. 
 
-Using past activities as a template, I started coding the HTML Routes file. I then started coding the API Routes file as well. I quickly realized that I could not test any of this code without creating a server, so I coded the server.js file. The htmlRoutes.js and server.js files proved to be simple and easier to understand. The apiRoutes.js took a lot of trial and error to figure out, especially when it came to coding the POST request. Once that was figured out, however, I was able to code add a DELETE request to my code. 
+Using past activities as a template, I started coding the HTML Routes file. I then started coding the API Routes file as well. I quickly realized that I could not test any of this code without creating a server, so I coded the server.js file. The htmlRoutes.js and server.js files proved to be simple and easier to understand. The apiRoutes.js took a lot of trial and error to figure out, especially when it came to coding the POST request. Once that was figured out, however, I was able to add a DELETE request to my code. 
 
 The final steps of this project involved testing the application several times for any bugs and then deploying it to Heroku. 
 
