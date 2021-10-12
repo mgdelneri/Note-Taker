@@ -22,6 +22,10 @@ Here is a walkthrough video of Note-Taker's functionality:
 
 [Note-Taker Walkthrough Video](https://drive.google.com/file/d/1BjB2lUK7doLCcb4UuRg_dAqDdMFbXUPH/view)
 
+Here is a link to the depoloyed project in Heroku: 
+
+[Deployed Note-Taker Application](https://arcane-journey-06582.herokuapp.com/)
+
 ## CONCLUSION
 
 I would have never been able to get as far as I did in this assignment if I had not collaborated with my classmates on it, as well as get help from my tutor. Tutors are of course helpful because of their expertise and their ability to help you get back on track and point you in the right direction. That being said, the study groups with my peers are proving to be invaluable on so many levels. Not only do we help each other out with the actual content of the assignment, but it also shows me that I am not alone in my difficulties and that I am even able to help others at times. It helps boost our confidence and encourages us to keep pushing through the many hurdles of coding. I imagine this is great practice for the work force as well. 
